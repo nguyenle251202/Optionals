@@ -5,8 +5,10 @@ public class Enum {
         AddUser(1),
         ViewAll(2),
         FindUserById(3),
-        FindUsersByCity(4),
-        FindUsersByEmailDomain(5),
+        GetUserEmailDomain(4),
+        GetUserCity(5),
+        FindUsersByCity(6),
+        FindUsersByEmailDomain(7),
         EXIT(0);
 
         private final int code;

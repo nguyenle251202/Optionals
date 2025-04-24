@@ -18,7 +18,7 @@ public class User {
         this.username = username;
         this.email = email;
         this.address = address;
-        this.phonenumber = phonenumber;
+        this.phonenumber = String.format("+84-%s", phonenumber);
     }
     // ------------------------------------------------
 
