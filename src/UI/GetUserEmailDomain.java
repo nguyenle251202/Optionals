@@ -12,9 +12,10 @@ public class GetUserEmailDomain {
         String id = scanner.nextLine();
 //        UserRepository userRepository = new UserRepository();
 //        userRepository.getUserEmailDomain(id)
-        UserRepository.getUserEmailDomain(id)
+        UserRepository.findUserById(id)
                 .flatMap(UserRepository::getUserEmailDomain)
-                .ifPresentOrElse(domain -> System.out.println("Email: " + domain),
-                        () -> System.out.println("Cannot get user email domain"));
+                .ifPresentOrElse(email ->
+                                System.out.print("emailDomain: " + email),
+                        () -> System.out.println("User not found or email invalid"));
     }
 }

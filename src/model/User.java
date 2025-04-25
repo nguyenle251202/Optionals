@@ -4,7 +4,7 @@ import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class User {
-    AtomicInteger Auto = new AtomicInteger();
+    private static final AtomicInteger idCounter = new AtomicInteger(1);
     private String id;
     private String username;
     private String email;
@@ -13,12 +13,12 @@ public class User {
     // ------------------------------------------------
 
     // Contructor -------------------------------------
-    public User(String id, String username, String email, Address address, String phonenumber) {
-        this.id = String.format("%03d", Auto.incrementAndGet());
+    public User(String id, String username, String email, String phonenumber, Address address) {
+        this.id = String.format("SV%03d", idCounter.getAndIncrement());
         this.username = username;
         this.email = email;
         this.address = address;
-        this.phonenumber = String.format("+84-%s", phonenumber);
+        this.phonenumber = this.phonenumber;
     }
     // ------------------------------------------------
 

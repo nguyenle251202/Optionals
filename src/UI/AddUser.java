@@ -1,5 +1,6 @@
 package UI;
 
+import model.Address;
 import model.User;
 import repository.UserRepository;
 
@@ -22,24 +23,24 @@ public class AddUser {
         System.out.print("UserName: ");
         String username = scanner.nextLine().trim();
 
-        System.out.print("\nEmail: ");
+        System.out.print("Email: ");
         String email = scanner.nextLine().trim();
 
-        System.out.print("\n PhoneNumber");
-        String phonenumber = scanner.nextLine().trim();
-
-        System.out.print("\nStreet: ");
+        System.out.print("Street: ");
         String street = scanner.nextLine();
 
-        System.out.print("\nCity: ");
+        System.out.print("City: ");
         String city = scanner.nextLine();
 
-        System.out.print("\nZipCode: ");
+        System.out.print("ZipCode: ");
         String zipcode = scanner.nextLine();
 
-        System.out.print("\nCountry: ");
+        System.out.print("Country: ");
         String country = scanner.nextLine();
 
-        return null;
+        System.out.print("PhoneNumber: ");
+        String phonenumber = scanner.nextLine().trim();
+
+        return new User(null, username, email, phonenumber, new Address(street, city, zipcode, country));
     }
 }
